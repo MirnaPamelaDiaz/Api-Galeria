@@ -1,0 +1,35 @@
+@startuml
+class Autor{
+  -Integer id
+  -String nombre
+  -String apellido
+  -String nacionalidad
+  -Boolean alta = true
+  -Obra obra
+ }
+
+ class Obra{
+   -Integer id
+   -String titulo
+   -Integer anio
+   -Autor autor
+   -String descripcion
+   -String foto
+   -Tipo tipo
+   -Boolean alta
+ }
+
+ enum Tipo{
+ PINTURA,
+ ESCULTURA,
+ ORFEBRERIA,
+ ARTESANIA,
+ DIBUJO,
+ GRABADO,
+ CERAMICA
+ }
+interface Venta{
+}
+ Obra -->Autor
+ Tipo<--Obra
+@enduml
